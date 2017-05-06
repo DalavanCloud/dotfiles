@@ -4,10 +4,10 @@ set encoding=utf-8
 set termencoding=utf-8
 
 syntax enable
-set background=dark
+set background=light
 set t_Co=256
-"colorscheme solarized
-"colorscheme desert256
+colorscheme solarized
+
 
 set textwidth=80
 set colorcolumn=79
@@ -60,7 +60,7 @@ set switchbuf=useopen
 set scrolloff=4
 set nomodeline
 set cursorline
-:hi CursorLine   cterm=NONE ctermbg=236
+:hi CursorLine   cterm=NONE ctermbg=222
 
 "nnoremap <C-]> :exe 'Gtag ' . expand('<cword>')<CR>
 " Smart_TabComplete
