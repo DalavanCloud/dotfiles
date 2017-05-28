@@ -14,6 +14,7 @@ alias vim 'vim -p'
 
 source ~/.config/fish/solarized.fish
 
+# https://github.com/seebi/dircolors-solarized
 eval (dircolors -c ~/.dircolors | sed 's/>&\/dev\/null$//')
 
 # macOS
