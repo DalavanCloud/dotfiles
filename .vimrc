@@ -1,4 +1,4 @@
-" Plugins: airline, airline-themes, nerdtree, syntastic?
+" Plugins: airline, airline-themes, nerdtree, syntastic?, vim-cursorword
 
 set nocompatible
 set nomodeline
@@ -30,16 +30,18 @@ set backspace=eol,start
 set pastetoggle=<F2>
 
 set smartindent
+set smarttab
 set copyindent
 set autoindent
 set expandtab
+set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set shiftround
-set smarttab
 
 set hlsearch
 set incsearch
+set ignorecase
 set smartcase
 
 set nobackup
@@ -55,6 +57,7 @@ inoremap <C-j> <Esc>
 autocmd BufNewFile,BufRead *.md setfiletype markdown
 autocmd BufNewFile,BufRead *.md setlocal textwidth=80
 autocmd FileType make setlocal noet sw=8 sts=8
+autocmd FileType go set nolist
 
 " move to last line opened
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "    normal g'\"" | endif
