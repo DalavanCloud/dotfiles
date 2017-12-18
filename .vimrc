@@ -1,68 +1,62 @@
+" Plugins: airline, airline-themes, nerdtree, syntastic?
+
 set nocompatible
+set nomodeline
 scriptencoding utf-8
 set encoding=utf-8
 set termencoding=utf-8
 
+set t_Co=256
 syntax enable
 set background=light
-set t_Co=256
 colorscheme solarized
+set number
+set ttyfast
+set wrap
+set list
+set listchars=tab:→\ ,trail:·,extends:#,nbsp:·
+set switchbuf=usetab
+set scrolloff=4
+set cursorline
+:hi CursorLine   cterm=NONE ctermbg=222
+set tabpagemax=20
+set showtabline=2
+set timeoutlen=1
+set ttimeoutlen=1
 
+"set textwidth=80
+"set colorcolumn=79
+set backspace=eol,start
+set pastetoggle=<F2>
 
-set textwidth=80
-set colorcolumn=79
+set smartindent
+set copyindent
+set autoindent
 set expandtab
 set shiftwidth=2
 set softtabstop=2
 set shiftround
-set autoindent
-set copyindent
-set tabpagemax=15
-set showtabline=2
-set number
-set hlsearch
-
-nnoremap ; :
-nnoremap <tab> :tabn<CR>
-nnoremap <s-tab> :tabp<CR>
-nnoremap <C-j> :tabn<CR>
-nnoremap <C-k> :tabp<CR>
-nnoremap <C-o> :tabnew<CR>
-
-filetype plugin indent on
-" makefiles
-autocmd FileType make setlocal noet sw=8 sts=8
-" jump to last line
-au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
-
-set pastetoggle=<F2>
-set showmode
-set wrap
-set ttyfast
-set ignorecase
-set smartcase
 set smarttab
+
+set hlsearch
 set incsearch
+set smartcase
+
 set nobackup
 set noswapfile
 
-set list
-set listchars=tab:→\ ,trail:·,extends:#,nbsp:·
+" TODO: redesign
+nnoremap ; :
+nnoremap <tab> :tabn<CR>
+nnoremap <s-tab> :tabp<CR>
+map <C-n> :NERDTreeToggle<CR>
+inoremap <C-j> <Esc>
 
-"set mouse=a
-"nnoremap <C-e> 2<C-e>
-"nnoremap <C-y> 2<C-y>
+autocmd BufNewFile,BufRead *.md setfiletype markdown
+autocmd BufNewFile,BufRead *.md setlocal textwidth=80
+autocmd FileType make setlocal noet sw=8 sts=8
 
-set lazyredraw
-set laststatus=2
-set cmdheight=2
-set switchbuf=useopen
-set scrolloff=4
-set nomodeline
-set cursorline
-:hi CursorLine   cterm=NONE ctermbg=222
+" move to last line opened
+au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "    normal g'\"" | endif
 
-"nnoremap <C-]> :exe 'Gtag ' . expand('<cword>')<CR>
-" Smart_TabComplete
-"python from powerline.bindings.vim import source_plugin; source_plugin()
-"set smartindent
+
